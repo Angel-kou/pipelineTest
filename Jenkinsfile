@@ -11,6 +11,10 @@ pipeline {
             }
             steps {
                 sh 'printenv'
+	        echo 'Deploying....'
+		echo "当前BuildId: ${env.BUILD_ID}"
+		echo "当前Job: ${env.JOB_NAME}"
+		echo "当前URL: ${env.JENKINS_URL}"
             }
         }
     }
