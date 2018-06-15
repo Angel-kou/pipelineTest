@@ -2,17 +2,20 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') { 
-            steps { 
-		archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+        stage('Build') {
+            steps {
+                echo 'Building..'
             }
         }
-       stage('Test') {
-            echo 'Building....'
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
         }
-	stage('Deploy') {
-	    echo 'Deploying....'
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
         }
-	       
-     }
+    }
 }

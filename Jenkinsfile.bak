@@ -7,11 +7,12 @@ pipeline {
 		archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
             }
         }
-        stage('Test'){
-            steps {
-                junit '**/target/*.xml' 
-            }
+       stage('Test') {
+            echo 'Building....'
         }
-       
-    }
+	stage('Deploy') {
+	    echo 'Deploying....'
+        }
+	       
+     }
 }
