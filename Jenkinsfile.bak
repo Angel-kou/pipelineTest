@@ -1,16 +1,21 @@
-// Declarative //
+Jenkinsfile (Declarative Pipeline)
 pipeline {
     agent any
-    environment { 
-        CC = 'clang'
-    }
+
     stages {
-        stage('Example') {
-            environment { 
-                DEBUG_FLAGS = '-g'
-            }
+        stage('Build') {
             steps {
-                sh 'printenv'
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
